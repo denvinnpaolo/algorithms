@@ -41,3 +41,7 @@ class Solution:
         return res
 
 
+
+# result:
+# Runtime: 52 ms, faster than 92.27% of Python3 online submissions for Zigzag Conversion.
+# Memory Usage: 14.7 MB, less than 13.71% of Python3 online submissions for Zigzag Conversion.
