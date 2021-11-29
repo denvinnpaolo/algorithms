@@ -6,26 +6,30 @@
 # Solution
 class Solution:
     def convert(self, s: str, numRows: int) -> str:
+        # check if row is one because if it's not then no need to do zigzag pattern
         if numRows == 1:
             return s
         
+        # hashmap using row number as key and its value as the chars combined
         d = dict(zip([x + 1 for x in range(numRows)], ['' for x in range(numRows)]))
        
         counter = 1
         reverse = False
         
         for c in s:
+            # check if it's on top
             if counter == 1:
                 d[counter] += c
                 counter += 1
                 if reverse:
                     reverse = False
+            # check if it's at the bottom
             elif counter == numRows:
                 d[counter] += c
                 counter -= 1
                 if not reverse: 
                     reverse = True
-
+        
             else: 
                 d[counter] += c
                 
