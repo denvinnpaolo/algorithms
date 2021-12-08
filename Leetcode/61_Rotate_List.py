@@ -9,8 +9,8 @@
 #   0 <= k <= 2 * 109
 
 # Result
-# Runtime: 32 ms, faster than 92.84% of Python3 online submissions for Rotate List.
-# Memory Usage: 14.5 MB, less than 31.18% of Python3 online submissions for Rotate List.
+# Runtime: 44 ms, faster than 61.81% of Python3 online submissions for Multiply Strings.
+# Memory Usage: 14.2 MB, less than 83.49% of Python3 online submissions for Multiply Strings.
 
 # Solution:
 
