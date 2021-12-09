@@ -17,9 +17,8 @@
 # Both num1 and num2 do not contain any leading zero, except the number 0 itself.
 
 # Results
-# Runtime: 51 ms, faster than 58.98% of Python3 online submissions for Multiply Strings.
-# Memory Usage: 14.1 MB, less than 83.47% of Python3 online submissions for Multiply Strings.
-
+# Runtime: 44 ms, faster than 61.81% of Python3 online submissions for Multiply Strings.
+# Memory Usage: 14.2 MB, less than 83.49% of Python3 online submissions for Multiply Strings.
 
 
 # Solution
