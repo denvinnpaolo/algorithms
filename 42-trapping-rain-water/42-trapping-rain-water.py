@@ -1,36 +1,24 @@
-# GOAL:
-# list elements >= 0 
-# unsorted array
-# height >= 3
-
-# input == list<int>
-# output == max num of water trapped 
-
 class Solution:
     def trap(self, height: List[int]) -> int:
+        total = 0
+        lMax = height[0]
+        rMax = height[-1]
         
-        res = 0
+        i = 0
+        j = len(height) - 1
         
-        left = 0
-        right = len(height) - 1
-        
-        l_max = height[0]
-        r_max = height[-1]
-        
-        while left < right:
+        while i < j:
+            if lMax < height[i]:
+                lMax = height[i]
             
-            if l_max < height[left]:
-                l_max = height[left]
-                
-            if r_max < height[right]:
-                r_max = height[right]
-                
+            if rMax < height[j]:
+                rMax = height[j]
             
-            if l_max <=r_max:
-                res += (l_max-height[left])
-                left+= 1
+            if lMax <= rMax:
+                total += lMax - height[i]
+                i += 1
             else:
-                res+= (r_max-height[right])
-                right -= 1
+                total += rMax - height[j]
+                j -= 1
                 
-        return res
+        return total
