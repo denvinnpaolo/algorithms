@@ -17,7 +17,7 @@ class Solution:
             h = min(lmax, rmax)
             
             lg = r - l
-            print(r, lg)
+
             pot = h*lg
             
             max_water = max(pot, max_water)
