@@ -9,6 +9,9 @@ class Solution:
         if head is None:
             return
         
+        if head.next is None:
+            return head
+        
         s = []
         
         reversedTail = head
