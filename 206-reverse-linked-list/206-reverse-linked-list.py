@@ -10,7 +10,8 @@ class Solution:
         # if head.next is None:
         #     return head
         
-        p, c= None, head
+        p = None
+        c = head
         
         while c:
             t = c.next
