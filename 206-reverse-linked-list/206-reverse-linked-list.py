@@ -12,11 +12,21 @@ class Solution:
         
         p = None
         c = head
-        
         while c:
             t = c.next
             c.next = p
             p = c
             c = t
             
+            
         return p
+# prev = None
+#             cur = head
+#             while cur:
+#                 nxt = cur.next
+#                 cur.next = prev
+#                 prev = cur
+#                 cur = nxt
+
+
+#             return prev
