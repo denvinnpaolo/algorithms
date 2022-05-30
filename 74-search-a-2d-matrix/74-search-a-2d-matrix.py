@@ -9,7 +9,6 @@ class Solution:
             if target > row[0] and target < row[len(row) - 1]:
                 submatrix = row
                 break
-        print(submatrix)
         if not submatrix:
             return False
         
