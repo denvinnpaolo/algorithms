@@ -1,21 +1,21 @@
-# List of int num
-# given a target num that is a sum of two int in the list
-# there will always be number
+# GOAL: return two indices in the array that sums up to target num
+# return ascending indices
+# not sorted
+# 0 < len(nums) < 10,000
+# el can be repeated
+# one solution
+
+# [0 1 8 1 7]
+#  5
 
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        # for i in range(len(nums)):
-        #     for j in range(i + 1, len(nums)):
-        #         if nums[i] + nums[j] == target:
-        #             return [i,j]
-        
         d = {}
         
-        for i in range(len(nums)):
-            num = target - nums[i]
+        for idx in range(len(nums)):
+            potNum = target - nums[idx]
             
-            if num in d:
-                return [d[num], i]
+            if potNum in d:
+                return [d[potNum], idx]
             else:
-                d[nums[i]] = i
-        
+                d[nums[idx]] = idx
