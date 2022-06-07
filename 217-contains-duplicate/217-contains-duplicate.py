@@ -12,12 +12,20 @@
 
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
-        seen = set()
+#         seen = set()
         
-        for num in nums:
-            if num not in seen:
-                seen.add(num)
-            else:
+#         for num in nums:
+#             if num not in seen:
+#                 seen.add(num)
+#             else:
+#                 return True
+        
+#         return False
+
+        nums.sort()
+    
+        for i in range(len(nums) - 1):
+            if nums[i] == nums[i + 1]:
                 return True
         
         return False
