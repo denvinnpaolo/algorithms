@@ -1,31 +1,34 @@
-# GOAL: return true if the input strings are anagrams of each other
-# anagram is a word or phrase formed by rearranging the letters of a different word or phrase
-# len(s) == len(t)
-# inputs == type str
-# output == bool
+# given two string input
+# input must be same length
+# inputs are anagrams if they contain same exact number of letters
+# in anagrams, letters can be rearranged
 
-
+# 2. check if len(s) == len(t)
+# 1. check if s and t are type string
+# 3. choose to iterate and append every char of either s or t to a hash table
+# 4. if string has a letter that isn't in hash table or key == 0 then return False
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        len_s = len(s)
-        len_t = len(t)
-        
-        if len_s == 0 or len_t == 0 or len_s!= len_t:
+        if len(s) != len(t):
             return False
         
-        s_hash = dict()
+        di = {}
         
-        for letter in s:
-            if letter in s_hash:
-                s_hash[letter] += 1
+        # add letters to dict
+        for c in s:
+            if c in di:
+                di[c] += 1
             else:
-                s_hash[letter] = 1
-                
-        for letter in t:
-            if letter not in s_hash:
-                return False
-            elif s_hash[letter] == 0:
-                return False
+                di[c] = 1
+        
+        for c in t:
+            if c in di:
+                di[c] -= 1
+                if di[c] == -1:
+                    return False
             else:
-                s_hash[letter] -= 1
+                return False
         return True
+                
+            
+        
