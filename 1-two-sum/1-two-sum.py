@@ -1,21 +1,29 @@
-# GOAL: return two indices in the array that sums up to target num
-# return ascending indices
-# not sorted
-# 0 < len(nums) < 10,000
-# el can be repeated
-# one solution
+# int nums
+# given a target
+# must return indices of two numbers that add up to target
+# there's always a solution within the array
+# can't use same element twice but can use the same number
 
-# [0 1 8 1 7]
-#  5
+# steps
+# 1. go through each number in nums
+# 2. subtract num to target
+# 3. check if number looking for was passed
+# 4. continue until found
 
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        d = {}
+        # key: value
+        # num: index
+        d ={}
         
-        for idx in range(len(nums)):
-            potNum = target - nums[idx]
+        
+        for i in range(len(nums)):
+            pot_num = target - nums[i]
             
-            if potNum in d:
-                return [d[potNum], idx]
+            if pot_num in d:
+                return [d[pot_num], i]
             else:
-                d[nums[idx]] = idx
+                d[nums[i]] = i
+                
+                
+                
