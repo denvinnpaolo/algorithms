@@ -17,10 +17,6 @@ class Solution:
                 
             cur = cur.next
                 
-        if list1:
-            cur.next = list1
-        
-        if list2:
-            cur.next = list2
+        cur.next = list1 or list2
             
         return dummy.next
