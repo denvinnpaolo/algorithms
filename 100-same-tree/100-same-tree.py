@@ -6,23 +6,10 @@
 #         self.right = right
 class Solution:
     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
-        first = self.preorder(p, [])
-        second = self.preorder(q, [])
-        
-        
-        if first == second:
+        if not p and not q:
             return True
         
+        if p and q and p.val == q.val:
+            return (self.isSameTree(p.left, q.left) and self.isSameTree(p.right,q.right))
+        
         return False
-    
-    def preorder(self, root, res):
-        if root == None:
-            res.append(None)
-            return res
-        
-        res.append(root.val)
-        
-        res = self.preorder(root.left, res)
-        res = self.preorder(root.right, res)
-        
-        return res
