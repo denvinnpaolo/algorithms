@@ -16,9 +16,7 @@ class Solution:
             return res
         
         if len(res) < level:
-            print(level)
             res.append([root.val])
-            
         else:
             res[level - 1].append(root.val)
         
