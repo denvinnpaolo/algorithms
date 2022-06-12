@@ -17,7 +17,7 @@ class Solution:
     
     def preorder(self, root, res):
         if root == None:
-            res.append(None)
+            res.append("null")
             return res
         
         res.append(root.val)
