@@ -3,7 +3,7 @@ class Solution:
         if len(nums) < 3:
             return []
         
-        nums = sorted(nums)
+        nums.sort()
         n = len(nums)
         res = set()
         for i in range(n - 2):
