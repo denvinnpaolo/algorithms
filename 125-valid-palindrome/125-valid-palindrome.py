@@ -1,24 +1,23 @@
+# inputs
+# - string
+#   
 class Solution:
     def isPalindrome(self, s: str) -> bool:
+        lowered = s.lower()
+        extracted_string = ""
         
-        phrase = ""
-        
-        for char in s:
+        for char in lowered:
             if char.isalnum():
-                phrase += char.lower()
+                extracted_string += char
         
-        if len(phrase) == 0:
-            return True
+        i = 0
+        j = len(extracted_string) - 1
         
-        l = 0 
-        r = len(phrase) - 1
-        
-        while l < r:
-            if phrase[l] == phrase[r]:
-                l += 1
-                r -= 1
+        while i <= j:
+            if extracted_string[i] == extracted_string[j]:
+                i += 1
+                j -= 1
             else:
                 return False
-            
-        return True
         
+        return True
