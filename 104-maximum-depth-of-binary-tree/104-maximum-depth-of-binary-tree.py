@@ -7,9 +7,7 @@
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
         
-        res = self.maxDepthHelper(root, 0, float('-inf'))
-        
-        return res
+        return self.maxDepthHelper(root, 0, float('-inf'))
         
     def maxDepthHelper(self, node, lvl, hi):
         if lvl > hi:
