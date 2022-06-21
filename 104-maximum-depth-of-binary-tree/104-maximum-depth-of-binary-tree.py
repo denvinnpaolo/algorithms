@@ -7,19 +7,19 @@
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
         
-        hi = self.maxDepthHelper(root, 0, -1)
+        res = self.maxDepthHelper(root, 0, float('-inf'))
         
-        return hi
+        return res
         
-    def maxDepthHelper(self, root, count, hi):
-        if count > hi:
-            hi = count
-        
-        if root == None:
+    def maxDepthHelper(self, node, lvl, hi):
+        if lvl > hi:
+            hi = lvl
+            
+        if node is None:
             return hi
         
-        hi = self.maxDepthHelper(root.left, count + 1, hi)
-        hi = self.maxDepthHelper(root.right, count + 1, hi)
-     
-        return hi
         
+        hi = self.maxDepthHelper(node.left, lvl + 1, hi)
+        hi = self.maxDepthHelper(node.right, lvl + 1, hi)
+        
+        return hi
