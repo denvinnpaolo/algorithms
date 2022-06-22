@@ -1,27 +1,16 @@
-# Goal: return a list of grouped anagrams
-#  strs = unsorted list<str>
-# 1 <= len(str) <= 10,000
-# 0 <= len(strs) <= 100
-# char in str == lower english letters
-
-# input == list<str>
-# output == list<list>
-
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        seen_words = dict()
         
-        for str in strs:
-            sorted_str = sorted(str)
+        d = {}
+        
+        for st in strs:
+            sorted_str = "".join(sorted(st))
             
-            word = "".join(sorted_str)
-            
-            if word in seen_words:
-                seen_words[word].append(str)
+            if sorted_str in d:
+                d[sorted_str].append(st)
             else:
-                seen_words[word] = [str]
-                
-        grouped_anagrams = seen_words.values()
+                d[sorted_str] =[st]
         
-        return grouped_anagrams        
+        vals = d.values()
         
+        return list(vals)
