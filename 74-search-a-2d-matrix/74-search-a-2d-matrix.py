@@ -6,18 +6,16 @@ class Solution:
                     sub_matrix = row
                     break
             
-            print(sub_matrix)
+    
             if not sub_matrix: return False
             
             l = 0
             r = len(sub_matrix) - 1
             
-            print(sub_matrix)
             while l <= r:
                 mid = (l + r) // 2
                 
                 num = sub_matrix[mid]
-                print(num, target)
                 if num  == target:
                     return True
                 elif num < target:
