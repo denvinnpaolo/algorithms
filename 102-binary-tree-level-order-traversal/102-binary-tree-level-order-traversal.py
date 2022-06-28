@@ -29,8 +29,7 @@ class Solution:
                 if num.right:
                     cur_lvl.append(num.right.val)
                     cur_nodes.append(num.right)
-            
-            print(cur_lvl)
+
             if len(cur_lvl) > 0:
                 q.append(cur_nodes)
 
