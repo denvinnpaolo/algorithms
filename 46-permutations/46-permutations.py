@@ -18,4 +18,4 @@ class Solution:
             
             nums.append(n)
             
-        return res
+        return sorted(res)
