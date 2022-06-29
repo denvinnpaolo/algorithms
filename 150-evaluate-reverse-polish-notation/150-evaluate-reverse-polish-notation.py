@@ -10,9 +10,8 @@ class Solution:
             elif el =="*":
                 s.append(s.pop() * s.pop())
             elif el =="/":
-                n1 = s.pop()
-                n2 = s.pop()
-                n3 = int(n2 / n1)
+                a, b = s.pop(), s.pop()
+                n3 = int(b / a)
                 s.append(n3)
             else:
                 s.append(int(el))
