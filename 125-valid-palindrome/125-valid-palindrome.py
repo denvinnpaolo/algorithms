@@ -1,22 +1,18 @@
-# inputs
-# - string
-#   
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        lowered = s.lower()
-        extracted_string = ""
+        trimmedString = ""
         
-        for char in lowered:
-            if char.isalnum():
-                extracted_string += char
+        for c in s:
+            if c.isalnum():
+                trimmedString+= c.lower()
+        l = 0
+        r= len(trimmedString) - 1      
         
-        i = 0
-        j = len(extracted_string) - 1
-        
-        while i <= j:
-            if extracted_string[i] == extracted_string[j]:
-                i += 1
-                j -= 1
+        while l <= r:
+            if trimmedString[l] == trimmedString[r]:
+                l += 1
+                r -= 1
+                continue
             else:
                 return False
         
