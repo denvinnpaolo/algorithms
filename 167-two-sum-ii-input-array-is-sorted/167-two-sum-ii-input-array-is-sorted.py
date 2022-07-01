@@ -1,16 +1,15 @@
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
+    def twoSum(self, numbers: List[int], target: int) -> List[int]:
         
-        left = 0
-        right = len(nums) - 1
+        l = 0
+        r = len(numbers) - 1
         
-        while left < right:
-            potNum = nums[right] + nums[left]
+        while l < r:
+            num = numbers[l] + numbers[r]
             
-            if potNum == target:
-                return [left+ 1, right+ 1]
-            elif potNum > target:
-                right -= 1
+            if num == target:
+                return [l+1, r + 1]
+            elif num > target:
+                r -= 1
             else:
-                left += 1
-                
+                l +=1
