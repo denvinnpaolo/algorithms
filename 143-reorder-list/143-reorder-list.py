@@ -1,3 +1,14 @@
+# Will have a list with a length of 3
+# each node will have a attribute point to the next list
+
+# steps
+# find the mid node
+# l1 = head -> mid
+# l2 = mid + 1 -> tail
+# reverse l2 ex:  3 -> 4 = 4 ->
+# merge l1 and l2 where l1 is the first node followed by head of l2
+# continue until l1 and l2 == None
+
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
@@ -8,40 +19,39 @@ class Solution:
         """
         Do not return anything, modify head in-place instead.
         """
-        start = head
-        mid, end = head, head.next
-        # get mid
-        while end and end.next:
-            mid = mid.next
-            end = end.next.next
+        slow, fast = head, head.next
         
-        end = mid.next
-        mid.next = None
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+            
+        l1 = head
+        mid = slow.next
+        slow.next = None
         
-        # reverse end
-        rev = None
-        cur = end
-        while cur:
+        l2 = None
+        
+        while mid:
+            temp = mid.next
+            mid.next = l2
+            l2 = mid
+            mid = temp
+        
+        
+        cur = l1
+        
+        while cur and l2:
             temp = cur.next
-            cur.next = rev
-            rev = cur
+            cur.next = l2
+            l2 = l2.next
+            cur.next.next = temp
+            
             cur = temp
-            
-            
-        while start and rev:
-            temp1 = start.next
-            temp2 = rev.next
-            
-            start.next = rev
-            rev.next = temp1
-            
-            rev = temp2
-            
-            start = temp1
-            
-            
-        return head
-            
         
-        
+        return l1
+            
+            
+            
+            
+            
             
