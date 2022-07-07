@@ -4,13 +4,20 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
-from collections import deque
 class Solution:
     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
-        if not p and not q:
-            return True
+        res = [True]
         
-        if p and q and p.val == q.val:
-            return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
+        def dfs(f, s):
+            if not f and not s:
+                return
+            
+            if f and s and (f.val == s.val):
+                dfs(f.left, s.left)
+                dfs(f.right, s.right)
+            else:
+                res[0] = False
         
-        return False
+        dfs(p, q)
+        
+        return res[0]
