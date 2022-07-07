@@ -14,8 +14,7 @@ class Solution:
             
             l = dfs(node.left)
             r = dfs(node.right)
-            print(abs(l-r) > 1)
-            print(l, r)
+
             if abs(l-r) > 1:
                 balanced[0] = False
             
