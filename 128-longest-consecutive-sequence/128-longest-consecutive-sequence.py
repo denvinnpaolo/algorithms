@@ -9,7 +9,6 @@ class Solution:
             nxt = num + 1
             
             if num - 1 not in s and num in s:
-                
                 while nxt in s:
                     cur += 1
                     nxt += 1
