@@ -14,8 +14,6 @@ class Solution:
             left = dfs(node.left)
             right = dfs(node.right)
             
-            print(left, right)
-            
             if total[0] < left + right:
                 total[0] = left + right
             
