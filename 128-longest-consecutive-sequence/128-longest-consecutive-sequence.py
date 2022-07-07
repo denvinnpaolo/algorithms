@@ -8,7 +8,9 @@ class Solution:
             cur = 1
             nxt = num + 1
             
-            if num - 1 not in s:
+            if num - 1 in s:
+                continue
+            else:
                 while nxt in s:
                     cur += 1
                     nxt += 1
