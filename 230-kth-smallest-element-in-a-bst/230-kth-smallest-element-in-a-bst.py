@@ -17,4 +17,5 @@ class Solution:
             dfs(node.right)
             
         dfs(root)
+        print(b_vals)
         return b_vals[k -  1]
