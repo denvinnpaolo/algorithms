@@ -8,6 +8,6 @@ class Solution:
             else:
                 d[num] = 1
                 
-        sorted_d = reversed(sorted(d, key=lambda k: d[k]))
+        sorted_d = sorted(d, key=lambda k: d[k], reverse=True)
         
-        return list(sorted_d)[:k]
+        return sorted_d[:k]
