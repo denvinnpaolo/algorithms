@@ -4,9 +4,7 @@ class Solution:
         d = {}
         
         for i in range(len(nums)):
-            if nums[i] in d:
-                continue
-            else:
+            if nums[i] not in d:
                 d[nums[i]] = numpy.prod(nums[:i] + nums[i + 1:])
         
         res = []
