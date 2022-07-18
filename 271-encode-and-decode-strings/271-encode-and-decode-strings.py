@@ -3,13 +3,13 @@ class Codec:
         """Encodes a list of strings to a single string.
         """
         
-        return "11-1".join(strs)
+        return "uyu1".join(strs)
         
 
     def decode(self, s: str) -> List[str]:
         """Decodes a single string to a list of strings.
         """
-        return s.split("11-1")
+        return s.split("uyu1")
 
 
 # Your Codec object will be instantiated and called as such:
