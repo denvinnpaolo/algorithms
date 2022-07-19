@@ -1,28 +1,23 @@
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
-        if len(nums) < 3:
-            return []
         
         nums.sort()
-        n = len(nums)
-        res = set()
-        for i in range(n - 2):
-            left = i + 1
-            right = n - 1
-            
-
-            
-            while left < right:
-                potNum = nums[i] + nums[left] + nums[right]
-                if potNum == 0:
-                    ans = (nums[i], nums[left], nums[right])
-                    res.add(ans)
-                    right -= 1
-                    left += 1
-                elif  potNum > 0:
-                    right -= 1
-                else:
-                    left += 1
+        triplets = set()
+        ln = len(nums)
         
-    
-        return res
+        for i in range(ln):
+            l, r = i + 1, ln - 1
+            
+            while l < r:
+                s = nums[i] + nums[l] + nums[r]
+                if s == 0:
+                    triplet = (nums[i], nums[l], nums[r])
+                    triplets.add(triplet)
+                    l+= 1
+                    r -= 1
+                elif s > 0:
+                    r-= 1
+                else:
+                    l += 1
+        return triplets
+            
