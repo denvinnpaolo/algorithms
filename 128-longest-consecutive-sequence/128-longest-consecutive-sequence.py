@@ -8,7 +8,7 @@ class Solution:
         for i in range(len(nums)):
             cur = 1
             nxt = nums[i] + 1
-            if nums[i] - 1 not in s and nxt in s:
+            if nums[i] - 1 not in s:
                 while nxt in s:
                     nxt += 1
                     cur += 1
