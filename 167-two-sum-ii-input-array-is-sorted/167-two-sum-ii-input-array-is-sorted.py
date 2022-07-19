@@ -5,7 +5,7 @@ class Solution:
         while True:
             tot = numbers[l] + numbers[r]
             if tot == target:
-                return [l + 1, r + 1]
+                return l + 1, r + 1
             elif tot > target:
                 r -= 1
             else:
