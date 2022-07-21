@@ -1,12 +1,12 @@
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        buy = None
+        buy = prices[0]
         
         profit = 0
         
-        for price in prices:
-            if buy is None:
-                buy = price
+        for price in prices[1:]:
+            # if buy is None:
+            #     buy = price
             
             if price < buy:
                 buy = price
