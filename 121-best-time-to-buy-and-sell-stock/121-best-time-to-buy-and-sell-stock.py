@@ -5,9 +5,6 @@ class Solution:
         profit = 0
         
         for price in prices[1:]:
-            # if buy is None:
-            #     buy = price
-            
             if price < buy:
                 buy = price
                 
