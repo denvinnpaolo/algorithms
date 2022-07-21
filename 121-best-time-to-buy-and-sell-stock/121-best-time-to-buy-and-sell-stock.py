@@ -11,7 +11,7 @@ class Solution:
                 buy = price
                 
             
-            if profit < price - buy:
+            if price > profit and profit < price - buy:
                 profit = price-buy
                 
                 
