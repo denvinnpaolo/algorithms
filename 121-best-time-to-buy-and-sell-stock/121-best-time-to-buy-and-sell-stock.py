@@ -4,8 +4,6 @@ class Solution:
         
         profit = 0
         
-        
-        
         for price in prices:
             if buy is None:
                 buy = price
@@ -13,7 +11,8 @@ class Solution:
             if price < buy:
                 buy = price
                 
-            profit = max(profit, price - buy)
+            if profit < price - buy:
+                profit = price-buy
                 
                 
             
