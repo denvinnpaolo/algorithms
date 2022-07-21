@@ -6,12 +6,12 @@ class Solution:
         buy = prices[0]
         
         profit = 0
+        
         for price in prices[1:]:
             if price < buy:
                 buy = price
                 
-            
-            if price > profit and profit < price - buy:
+            elif price > profit and profit < price - buy:
                 profit = price-buy
                 
                 
