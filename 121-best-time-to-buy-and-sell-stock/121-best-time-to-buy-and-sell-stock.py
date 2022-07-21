@@ -10,7 +10,8 @@ class Solution:
             if price < buy:
                 buy = price
                 
-            elif profit < price - buy:
+            
+            if profit < price - buy:
                 profit = price-buy
                 
                 
