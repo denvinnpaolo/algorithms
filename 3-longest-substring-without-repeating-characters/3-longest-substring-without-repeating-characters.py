@@ -1,22 +1,15 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        
-        hi = 0
         sub = ""
+        hi = 0
         
-        i = 0
-        
-        while i < len(s):
-            if s[i] in sub:
-                start = sub.index(s[i])
-                sub += s[i]
+        for c in s:
+            if c in sub:
+                start = sub.index(c)
                 sub = sub[start + 1:]
-            else:
-                sub += s[i]
+            sub += c
             
-                
             if len(sub) > hi:
                 hi = len(sub)
-            i += 1
                 
         return hi
